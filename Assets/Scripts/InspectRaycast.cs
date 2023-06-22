@@ -25,16 +25,16 @@ public class InspectRaycast : MonoBehaviour
                 if(!doOnce)
                 {
                     raycastedObj = hit.collider.gameObject.GetComponent<ObjectController>();
-
+                    raycastedObj.ShowObjectName();
                     CrosshairChange(true);
                 }
 
                 isCrosshairActive = true;
                 doOnce = true;
 
-                if(Input.GetKeyDown(KeyCode.E))
+                if(Input.GetMouseButtonDown(0))
                 {
-                    
+                    raycastedObj.ShowExtraInfo();
                 }
             }
 
@@ -43,6 +43,7 @@ public class InspectRaycast : MonoBehaviour
         {
             if(isCrosshairActive)
             {
+                raycastedObj.HideObjectName();
                 CrosshairChange(false);
                 doOnce = false;
             }

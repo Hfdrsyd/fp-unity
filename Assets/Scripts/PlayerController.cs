@@ -5,12 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    // public Transform player;
-    // public float mouseSensitivity = 2f;
-    // float cameraVerticalRotation = 0f;
-
-    // bool lockedCursor = true;
-
     [SerializeField] Transform playerCamera = null;
     [SerializeField] float mouseSensitivity = 2f;
     [SerializeField] float walkSpeed;
@@ -74,18 +68,6 @@ public class PlayerController : MonoBehaviour
         
         playerCamera.localEulerAngles = Vector3.right * cameraPitch;
         transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity);
-
-        // // Mouse Input
-        // float inputX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        // float inputY = Input.GetAxis("Mouse Y") * mouseSensitivity;
-
-        // // Vertical Rotation
-        // cameraVerticalRotation -= inputY;
-        // cameraVerticalRotation = Mathf.Clamp(cameraVerticalRotation, -90f, 90f);
-        // transform.localEulerAngles = Vector3.right * cameraVerticalRotation;
-
-        // // Horizontal Rotation
-        // player.Rotate(Vector3.up * inputX);
     }
 
     void UpdateMovement()
@@ -171,9 +153,5 @@ public class PlayerController : MonoBehaviour
             walkSpeed = normalSpeed;
         }
 
-        // if(isSprinting == true)
-        // {
-        //     walkSpeed *= sprintingMultiplier;
-        // }
     }
 }
