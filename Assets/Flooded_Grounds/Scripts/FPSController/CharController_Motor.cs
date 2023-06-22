@@ -14,8 +14,16 @@ public class CharController_Motor : MonoBehaviour {
 	public bool webGLRightClickRotation = true;
 	float gravity = -9.8f;
 
+    [SerializeField] bool lockedCursor = true;
+
+
 
 	void Start(){
+		if(lockedCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
 		//LockCursor ();
 		character = GetComponent<CharacterController> ();
 		if (Application.isEditor) {
