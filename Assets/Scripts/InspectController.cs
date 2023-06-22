@@ -37,19 +37,19 @@ public class InspectController : MonoBehaviour
         }
     }
 
-    void ShowName(string objectName)
+    public void ShowName(string objectName)
     {
         objectNameBG.SetActive(true);
         objectNameUI.text = objectName;
     }
 
-    void HideName()
+    public void HideName()
     {
         objectNameBG.SetActive(false);
         objectNameUI.text = "";
     }
 
-    void ShowAdditionalInfo(string newInfo)
+    public void ShowAdditionalInfo(string newInfo)
     {
         timer = onScreenTimer;
         startTimer = true;
